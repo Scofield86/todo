@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="css/default.css" type="text/css" media="screen, projection">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="main">
+<div class="well">
+    <div>
+        <p class="textCenter"> ToDo-List</p>
+    </div>
+    <div>
+        <input class="ToDoInput" type="text" data-bind="value: ToDotextInput, valueUpdate: 'afterkeydown', enterkey: Add" />
+        <button class="btn btn-sm btn-default" type="button" value="button" data-bind="click: Add">Add</button>
+    </div>
+    <div class="ToDo">
+        <!-- ko foreach: ToDoItems -->
+        <div data-bind="visible: shouldShowToDo">
+            <input class="ToDoCheckbox" type="checkbox" data-bind="checked: done" />
+            <span class="ToDoText" data-bind="text: toDoText"></span>
+        </div>
+        <!-- /ko -->
+    </div>
+    <div>
+        <button class="elementsLeft btn btn-sm btn-default" type="button" value="button" data-bind="click: Clear">Clear</button>
+        <p class="elementsRight text"> Show done items</p>
+        <input class="checkbox elementsRight" id="Checkbox" type="checkbox" data-bind="checked: showdone" />
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+<script src="js/JavaScript.js"></script>
+</body>
+</html>
